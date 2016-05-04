@@ -6,7 +6,8 @@ using Mimi
     intermed = Variable(index=[time])
 end
 
-function timestep(c::Foo, tt)
+function run(c::Foo, clock::Clock)
+    tt = gettimestep(clock)
     c.Variables.intermed[tt] = c.Parameters.input
 end
 
@@ -15,7 +16,8 @@ end
     output = Variable(index=[time])
 end
 
-function timestep(c::Bar, tt)
+function run(c::Bar, clock::Clock)
+    tt = gettimestep(clock)
     c.Variables.output[tt] = c.Parameters.intermed[tt]
 end
 

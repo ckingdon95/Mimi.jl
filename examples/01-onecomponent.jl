@@ -10,9 +10,9 @@ using Mimi
 
 end
 
-# Second, define the timestep function for the component
+# Second, define the run function for the component
 
-function timestep(s::component1, t::Int)
+function run(s::component1, c::Clock)
 end
 
 # Create a model uses the component
